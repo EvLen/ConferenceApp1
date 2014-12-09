@@ -1,0 +1,7 @@
+C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\bin\Debug\Conferences.Domain.dll
+C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\bin\Debug\Conferences.Domain.pdb
+C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\bin\Debug\Conferences.Utils.dll
+C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\bin\Debug\Conferences.Utils.pdb
+C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\obj\Debug\Conferences.Domain.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\obj\Debug\Conferences.Domain.dll
+C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\obj\Debug\Conferences.Domain.pdb
