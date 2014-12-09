@@ -17,7 +17,7 @@ namespace Conferences.Domain
 
         public Day(DateTime date) : this()
         {
-            Date = date;
+            Date = date.ToStartOfDay();
         }
     }
 }

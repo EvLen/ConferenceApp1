@@ -41,6 +41,7 @@ namespace Conferences.Domain
 
         public void AddDay(DateTime date)
         {
+            date = date.ToStartOfDay();
             if (date < DateTime.Now) throw new Exception("Date Must Not Be In The Past");
             if (Days.SingleOrDefault(x => x.Date == date) != null) throw new Exception("Date Already Exists");
             Days.Add(new Day(date));
