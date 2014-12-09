@@ -5,3 +5,10 @@ C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\bin\Debug\Confer
 C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\obj\Debug\Conferences.Domain.csprojResolveAssemblyReference.cache
 C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\obj\Debug\Conferences.Domain.dll
 C:\Users\Daniel\Documents\GitHub\Conferences\Conferences.Domain\obj\Debug\Conferences.Domain.pdb
+C:\@Projects\ConferenceApp1\Conferences.Domain\bin\Debug\Conferences.Domain.dll
+C:\@Projects\ConferenceApp1\Conferences.Domain\bin\Debug\Conferences.Domain.pdb
+C:\@Projects\ConferenceApp1\Conferences.Domain\bin\Debug\Conferences.Utils.dll
+C:\@Projects\ConferenceApp1\Conferences.Domain\bin\Debug\Conferences.Utils.pdb
+C:\@Projects\ConferenceApp1\Conferences.Domain\obj\Debug\Conferences.Domain.csprojResolveAssemblyReference.cache
+C:\@Projects\ConferenceApp1\Conferences.Domain\obj\Debug\Conferences.Domain.dll
+C:\@Projects\ConferenceApp1\Conferences.Domain\obj\Debug\Conferences.Domain.pdb

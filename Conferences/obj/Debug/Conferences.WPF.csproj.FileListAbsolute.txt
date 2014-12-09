@@ -11,3 +11,16 @@ C:\Users\Daniel\Documents\GitHub\Conferences\Conferences\obj\Debug\Conferences.P
 C:\Users\Daniel\Documents\GitHub\Conferences\Conferences\obj\Debug\Conferences.WPF.csproj.GenerateResource.Cache
 C:\Users\Daniel\Documents\GitHub\Conferences\Conferences\obj\Debug\Conferences.exe
 C:\Users\Daniel\Documents\GitHub\Conferences\Conferences\obj\Debug\Conferences.pdb
+C:\@Projects\ConferenceApp1\Conferences\bin\Debug\Conferences.exe.config
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences.exe
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences.pdb
+C:\@Projects\ConferenceApp1\Conferences\bin\Debug\Conferences.exe
+C:\@Projects\ConferenceApp1\Conferences\bin\Debug\Conferences.pdb
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences.WPF.csprojResolveAssemblyReference.cache
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\MainWindow.baml
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\MainWindow.g.cs
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\App.g.cs
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences_MarkupCompile.cache
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences.g.resources
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences.Properties.Resources.resources
+C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences.WPF.csproj.GenerateResource.Cache
