@@ -13,6 +13,7 @@ namespace Conferences.Domain
         public DateTime EndDate { get; set; }
         public decimal Price { get; set; }
         public IList<Day> Days { get; set; }
+        public List<Room> Rooms { get; set; }
 
         public Conference()
         {
@@ -44,7 +45,13 @@ namespace Conferences.Domain
             date = date.ToStartOfDay();
             if (date < DateTime.Now) throw new Exception("Date Must Not Be In The Past");
             if (Days.SingleOrDefault(x => x.Date == date) != null) throw new Exception("Date Already Exists");
-            Days.Add(new Day(date));
+            Days.Add(new Day(this,date));
+        }
+
+        public void AddRoom(string name, int capcity)
+        {
+            if (Rooms.Any(x => x.Name == name)) throw new Exception("ddd");
+            Rooms.Add(new Room(this,name,capcity));
         }
     }
 }

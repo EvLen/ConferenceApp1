@@ -38,16 +38,21 @@ namespace Conferences.Domain
             Password = password;
         }
 
-        public User(string firstName, string surname, string email, string password, string image)
-            : this(firstName, surname, email, password)
+
+        public void UpdateDetails(string firstName, string surname, string email, string password, string image, string speakerBio)
         {
+            FirstName = firstName;
+            Surname = surname;
+            Email = email;
+            Password = password;
             Image = image;
+            SpeakerBio = speakerBio;
         }
 
-        public User(string firstName, string surname, string email, string password, string image, string speakerBio)
-            : this(firstName, surname, email, password, image)
+        public void AddInterest(Tag interest)
         {
-            SpeakerBio = speakerBio;
+            if (Interests.Contains(interest)) return;
+            Interests.Add(interest);
         }
 
     }

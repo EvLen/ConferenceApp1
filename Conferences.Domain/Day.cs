@@ -10,15 +10,24 @@ namespace Conferences.Domain
     {
         public DateTime Date { get; set; }
         public List<Session> Sessions { get; set; }
+        public Conference Conference { get; set; }
         
         public Day()
         {
             Sessions = new List<Session>();
         }
 
-        public Day(DateTime date) : this()
+        public Day(Conference conference, DateTime date) : this()
         {
             Date = date.ToStartOfDay();
+            Conference = conference;
         }
+
+        public void AddSession(Session session)
+        {
+            if (Sessions.Contains(session)) return;
+            Sessions.Add(session);
+        }
+
     }
 }

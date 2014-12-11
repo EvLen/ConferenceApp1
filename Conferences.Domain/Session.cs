@@ -16,6 +16,8 @@ namespace Conferences.Domain
         public Room Room { get; set; } 
         public User Speaker { get; set; }
         public List<User> Attendies { get; set; }
+        public Day Day {get; set;}
+
 
         public Session()
         {
@@ -37,19 +39,42 @@ namespace Conferences.Domain
             Speaker = speaker1;
         }
 
-
-        public void AddAttenties(string )
+        
+        public void Attend(User user)
         {
-            user = 
+            if (Attendies.Contains(user)) return;
+            if (Room != null && Room.Capacity <= Attendies.Count) throw new Exception("");
+            // if userr attending another session
+            Attendies.Add(user);
         }
 
-
-        public void AddStartTime(DateTime startTime)
+        public void Unattend(User user)
         {
-            startTime = startTime.ToStartOfDay();
-            if (startTime < DateTime.Now) throw new Exception("Time Must Be After Now"); //Does this neeed to be added to a list to check for double booking?
+            if (!Attendies.Contains(user)) return;
+            Attendies.Remove(user);
         }
 
-        public void AddRoom
+        public void AssignRoom(Room room)
+        {
+         if (room == null) throw new Exception("bla");
+         if (room.Sessions.Any(x => (x.StartTime <= EndTime && StartTime <= x.EndTime))) throw new Exception("over lap");
+         Room = room;
+        }
+
+        public void SetSpeaker(User speaker)
+        {
+            Speaker = speaker;
+            // Set up speaker clash
+        }
+
+        public void UpdateDetails(string name, string summery, string desc, DateTime startTime, DateTime endTime)
+        {
+            Name = name;
+            Summery = summery;
+            Desc = desc;
+            StartTime = startTime;
+            EndTime = endTime;
+        }
+
     }
 }
