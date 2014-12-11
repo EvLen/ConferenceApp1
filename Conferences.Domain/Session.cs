@@ -16,7 +16,44 @@ namespace Conferences.Domain
         public Room Room { get; set; } 
         public User Speaker { get; set; }
         public List<User> Attendies { get; set; }
-        
-        
+
+        public Session()
+        {
+            StartTime = DateTime.Now;
+            EndTime = DateTime.Now;
+            Room = new Room();
+            Speaker = new User();
+            Attendies = new List<User>();
+        }
+
+        public Session(string name, string summery, string desc, DateTime startTime, DateTime endTime, Room room = null, User speaker = null)
+        {
+            Name = name;
+            Summery = summery;
+            Desc = desc;
+            StartTime = startTime;
+            EndTime = endTime;
+            Room = room;
+            Speaker = speaker;
+        }
+
+
+        public void AddAttenties(string )
+        {
+            user = 
+        }
+
+        //public void AddRoom(Room room)
+        //{
+        //    if (Room (x => x.room == room) != null) throw new Exception ("Room Already Taken"); // How do you test against table of data rather than a list?
+        //}
+
+        public void AddStartTime(DateTime startTime)
+        {
+            startTime = startTime.ToStartOfDay();
+            if (startTime < DateTime.Now) throw new Exception("Time Must Be After Now"); //Does this neeed to be added to a list to check for double booking?
+        }
+
+        public void AddRoom
     }
 }

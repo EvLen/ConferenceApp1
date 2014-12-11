@@ -10,6 +10,7 @@ namespace Conferences.Domain
     {
         public DateTime Date { get; set; }
         public List<Session> Sessions { get; set; }
+        
         public Day()
         {
             Sessions = new List<Session>();

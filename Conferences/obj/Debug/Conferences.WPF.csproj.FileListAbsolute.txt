@@ -24,3 +24,6 @@ C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences_MarkupCompile.cach
 C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences.g.resources
 C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences.Properties.Resources.resources
 C:\@Projects\ConferenceApp1\Conferences\obj\Debug\Conferences.WPF.csproj.GenerateResource.Cache
+C:\Users\Daniel\Documents\GitHub\ConferenceApp1\Conferences\bin\Debug\Conferences.exe.config
+C:\Users\Daniel\Documents\GitHub\ConferenceApp1\Conferences\obj\Debug\Conferences.exe
+C:\Users\Daniel\Documents\GitHub\ConferenceApp1\Conferences\obj\Debug\Conferences.pdb

@@ -10,5 +10,12 @@ namespace Conferences.Domain
     {
         public string Name { get; set; }
         public int Capacity { get; set; }
+
+        public Room()
+        {
+            Name = string.Empty;
+            Capacity = int.
+        }
     }
+
 }

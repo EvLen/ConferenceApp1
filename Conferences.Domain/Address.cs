@@ -14,5 +14,30 @@ namespace Conferences.Domain
         public string County { get; set; }
         public string PostCode { get; set; }
         public string Country { get; set; }
+
+        //public Address()
+        //{
+        //    FirstLine = string.Empty;
+        //    SecondLine = string.Empty;
+        //    City = string.Empty;
+        //    County = string.Empty;
+        //    PostCode = string.Empty;
+        //    Country = string.Empty;
+        //}
+        
+        public Address(string firstLine, string secondLine, string city, string county, string postCode, string country)
+        {
+            FirstLine = firstLine;
+            SecondLine = secondLine;
+            City = city;
+            County = county;
+            PostCode = postCode;
+            Country = country;
+        }
+
+        public Address()
+        {
+            // TODO: Complete member initialization
+        }
     }
 }
