@@ -29,6 +29,12 @@ _ReSharper*/
 Deployment
 *log.txt
 
+ipch/
+[Oo]bj/
+
+
+Ankh.NoLoad
+
 [Pp]ackages/
 .nuget/
 !.nuget/NuGet.Config
