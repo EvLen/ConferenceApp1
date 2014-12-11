@@ -26,7 +26,7 @@ namespace Conferences.Domain
             Attendies = new List<User>();
         }
 
-        public Session(string name, string summery, string desc, DateTime startTime, DateTime endTime, Room room = null, User speaker = null)
+        public Session(string name, string summery, string desc, DateTime startTime, DateTime endTime, Room room = null, User speaker1 = null)
         {
             Name = name;
             Summery = summery;
@@ -34,7 +34,7 @@ namespace Conferences.Domain
             StartTime = startTime;
             EndTime = endTime;
             Room = room;
-            Speaker = speaker;
+            Speaker = speaker1;
         }
 
 
@@ -43,10 +43,6 @@ namespace Conferences.Domain
             user = 
         }
 
-        //public void AddRoom(Room room)
-        //{
-        //    if (Room (x => x.room == room) != null) throw new Exception ("Room Already Taken"); // How do you test against table of data rather than a list?
-        //}
 
         public void AddStartTime(DateTime startTime)
         {
