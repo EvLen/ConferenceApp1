@@ -8,12 +8,12 @@ namespace Conferences.Domain
 {
     public class Address
     {
-        public string FirstLine { get; set; }
-        public string SecondLine { get; set; }
-        public string City { get; set; }
-        public string County { get; set; }
-        public string PostCode { get; set; }
-        public string Country { get; set; }
+        public virtual string FirstLine { get; set; }
+        public virtual string SecondLine { get; set; }
+        public virtual string City { get; set; }
+        public virtual string County { get; set; }
+        public virtual string PostCode { get; set; }
+        public virtual string Country { get; set; }
 
         public Address()
         {

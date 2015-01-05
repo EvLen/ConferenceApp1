@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Conferences.Utils
 {
-     public static class Validation
+    public static class Validation
     {
 
         /// <summary>
@@ -31,7 +31,9 @@ namespace Conferences.Utils
             if (!string.IsNullOrEmpty(value))
             {
                 value = value.Trim();
-                Regex Regex1 = new Regex(@"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
+                Regex Regex1 =
+                    new Regex(
+                        @"^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$");
                 return Regex1.IsMatch(value);
             }
             return false;
@@ -65,36 +67,43 @@ namespace Conferences.Utils
             {
                 Convert.ToDateTime(value);
             }
-            catch { retval = false; }
+            catch
+            {
+                retval = false;
+            }
             return retval;
         }
 
-	    public static bool ValidateUKNumber(this string value)
-	    {
-			if (!string.IsNullOrEmpty(value))
-			{
-				value = value.Trim();
-				var regex1 = new Regex(@"^\s*\(?(020[78]?\)? ?[1-9][0-9]{2,3} ?[0-9]{4})|(0[1-8][0-9]{3}\)? ?[1-9][0-9]{2} ?[0-9]{3})\s*$");
-				return regex1.IsMatch(value);
-			}
-			return false;
-	    }
+        public static bool ValidateUKNumber(this string value)
+        {
+            if (!string.IsNullOrEmpty(value))
+            {
+                value = value.Trim();
+                var regex1 =
+                    new Regex(
+                        @"^\s*\(?(020[78]?\)? ?[1-9][0-9]{2,3} ?[0-9]{4})|(0[1-8][0-9]{3}\)? ?[1-9][0-9]{2} ?[0-9]{3})\s*$");
+                return regex1.IsMatch(value);
+            }
+            return false;
+        }
 
         public static bool ValidateMobileNumber(this string value)
         {
-            if(!string.IsNullOrEmpty(value))
+            if (!string.IsNullOrEmpty(value))
             {
                 value = value.Replace(" ", "");
                 value = value.Replace("-", "");
                 value = value.Replace("+", "");
-                
+
                 value = value.Trim();
 
-                var rx = new Regex(@"^[0-9]{11,12}$"); 
+                var rx = new Regex(@"^[0-9]{11,12}$");
 
                 return rx.IsMatch(value);
             }
 
             return false;
         }
+
+    }
 }

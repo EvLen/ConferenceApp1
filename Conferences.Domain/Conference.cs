@@ -8,12 +8,12 @@ namespace Conferences.Domain
 {
     public class Conference : Entity
     {
-        public string Name { get; set; }
-        public DateTime StartDate { get; set; }
-        public DateTime EndDate { get; set; }
-        public decimal Price { get; set; }
-        public IList<Day> Days { get; set; }
-        public List<Room> Rooms { get; set; }
+        public virtual string Name { get; set; }
+        public virtual DateTime StartDate { get; set; }
+        public virtual DateTime EndDate { get; set; }
+        public virtual decimal Price { get; set; }
+        public virtual IList<Day> Days { get; set; }
+        public virtual List<Room> Rooms { get; set; }
 
         public Conference()
         {
@@ -34,7 +34,7 @@ namespace Conferences.Domain
             Price = price;
         }
 
-        public void SetPice(decimal price)
+        public virtual void SetPice(decimal price)
         {
             if (price < 0m) throw new Exception("Failed to set price. Price cannot be a negative value");
             Price = price;
