@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Conferences.Domain
 {
-    public class Address
+    public class Address : Entity
     {
         public virtual string FirstLine { get; set; }
         public virtual string SecondLine { get; set; }

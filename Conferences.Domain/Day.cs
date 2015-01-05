@@ -8,9 +8,9 @@ namespace Conferences.Domain
 {
     public class Day : Entity
     {
-        public DateTime Date { get; set; }
-        public List<Session> Sessions { get; set; }
-        public Conference Conference { get; set; }
+        public virtual DateTime Date { get; set; }
+        public virtual List<Session> Sessions { get; set; }
+        public virtual Conference Conference { get; set; }
         
         public Day()
         {
@@ -23,7 +23,7 @@ namespace Conferences.Domain
             Conference = conference;
         }
 
-        public void AddSession(Session session)
+        public virtual void AddSession(Session session)
         {
             if (Sessions.Contains(session)) return;
             Sessions.Add(session);

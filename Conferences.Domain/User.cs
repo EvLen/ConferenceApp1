@@ -8,15 +8,15 @@ namespace Conferences.Domain
 {
     public class User : Entity
     {
-        public string FirstName { get; set; }
-        public string Surname { get; set; }
-        public string Email { get; set; }
-        public string Password { get; set; }
-        public string Image { get; set; }
-        public string SpeakerBio { get; set; }
-        public Address Address { get; set; }
-        public List<Tag> Interests { get; set; }
-        public bool IsSpeaker { get; set; } //Not Sure How To Check This
+        public virtual string FirstName { get; set; }
+        public virtual string Surname { get; set; }
+        public virtual string Email { get; set; }
+        public virtual string Password { get; set; }
+        public virtual string Image { get; set; }
+        public virtual string SpeakerBio { get; set; }
+        public virtual Address Address { get; set; }
+        public virtual IList<Tag> Interests { get; set; }
+        public virtual bool IsSpeaker { get; set; } //Not Sure How To Check This
 
 
         public User()
@@ -39,7 +39,7 @@ namespace Conferences.Domain
         }
 
 
-        public void UpdateDetails(string firstName, string surname, string email, string password, string image, string speakerBio)
+        public virtual void UpdateDetails(string firstName, string surname, string email, string password, string image, string speakerBio)
         {
             FirstName = firstName;
             Surname = surname;
@@ -49,7 +49,7 @@ namespace Conferences.Domain
             SpeakerBio = speakerBio;
         }
 
-        public void AddInterest(Tag interest)
+        public virtual void AddInterest(Tag interest)
         {
             if (Interests.Contains(interest)) return;
             Interests.Add(interest);

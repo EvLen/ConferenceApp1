@@ -13,7 +13,7 @@ namespace Conferences.Domain
         public virtual DateTime EndDate { get; set; }
         public virtual decimal Price { get; set; }
         public virtual IList<Day> Days { get; set; }
-        public virtual List<Room> Rooms { get; set; }
+        public virtual IList<Room> Rooms { get; set; }
 
         public Conference()
         {
@@ -40,7 +40,7 @@ namespace Conferences.Domain
             Price = price;
         }
 
-        public void AddDay(DateTime date)
+        public virtual void AddDay(DateTime date)
         {
             date = date.ToStartOfDay();
             if (date < DateTime.Now) throw new Exception("Date Must Not Be In The Past");
@@ -48,7 +48,7 @@ namespace Conferences.Domain
             Days.Add(new Day(this,date));
         }
 
-        public void AddRoom(string name, int capcity)
+        public virtual void AddRoom(string name, int capcity)
         {
             if (Rooms.Any(x => x.Name == name)) throw new Exception("ddd");
             Rooms.Add(new Room(this,name,capcity));

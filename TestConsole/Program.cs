@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Conferences.Domain;
 using Conferences.Domain.Persistence;
 
@@ -13,30 +9,16 @@ namespace TestConsole
         private static void Main(string[] args)
         {
             var sessionFactory = NhibernateHelper.InitializeSessionFactory();
-            using (var session = sessionFactory.OpenSession())
-            {
-                // populate the database
-                using (var transaction = session.BeginTransaction())
-                {
-                    var user1 = new User("steve", "leonard", "steve@somewhere.com", "pass");
-                    var user2 = new User("dan", "evens", "dan@somewhere.com", "pass");
-                    session.SaveOrUpdate(user1);
-                    session.SaveOrUpdate(user2);
-                    transaction.Commit();
-                }
+            var persistenceManager = new NHibernatePersistenceManager(NhibernateHelper.InitializeSessionFactory());
+            var user1 = new User("steve", "leonard", "steve@somewhere.com", "pass");
+            var user2 = new User("dan", "evens", "dan@somewhere.com", "pass");
+            persistenceManager.Save(user1);
+            persistenceManager.Save(user2);
 
-            }
-            Console.WriteLine("Users:");
-            using (var session = sessionFactory.OpenSession())
-            {
-                using (session.BeginTransaction())
-                {
-                    var users = session.CreateCriteria(typeof (User)).List<User>();
+            foreach (var user in persistenceManager.Session.CreateCriteria(typeof(User)).List<User>())
+                           Console.WriteLine("{0} {1} - {2}", user.FirstName, user.Surname, user.Email);
 
-                    foreach (var user in users)
-                        Console.WriteLine("{0}{1} - {2}", user.FirstName, user.Surname, user.Email);
-                }
-            }
+           
             Console.ReadLine();
         }
     }

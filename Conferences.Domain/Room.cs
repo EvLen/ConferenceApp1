@@ -8,10 +8,10 @@ namespace Conferences.Domain
 {
     public class Room : Entity
     {
-        public string Name { get; set; }
-        public int Capacity { get; set; }
-        public List<Session> Sessions { get; set; }
-        public Conference Conference { get; set; }
+        public virtual string Name { get; set; }
+        public virtual int Capacity { get; set; }
+        public virtual IList<Session> Sessions { get; set; }
+        public virtual Conference Conference { get; set; }
 
 
         public Room()
@@ -28,7 +28,7 @@ namespace Conferences.Domain
         }
 
 
-        public void UpdateDetails(string name, int capacity)
+        public virtual void UpdateDetails(string name, int capacity)
         {
             Name = name;
             Capacity = capacity;
