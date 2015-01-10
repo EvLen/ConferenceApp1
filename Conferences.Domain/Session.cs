@@ -28,7 +28,7 @@ namespace Conferences.Domain
             Attendies = new List<User>();
         }
 
-        public Session(string name, string summery, string desc, DateTime startTime, DateTime endTime, Room room = null, User speaker1 = null)
+        public Session(string name, string summery, string desc, DateTime startTime, DateTime endTime, Room room = null, User speaker1 = null):this()
         {
             Name = name;
             Summery = summery;
