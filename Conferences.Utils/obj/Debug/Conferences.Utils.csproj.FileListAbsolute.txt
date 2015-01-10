@@ -8,3 +8,8 @@ C:\@Projects\ConferenceApp1\Conferences.Utils\obj\Debug\Conferences.Utils.dll
 C:\@Projects\ConferenceApp1\Conferences.Utils\bin\Debug\Conferences.Utils.dll
 C:\@Projects\ConferenceApp1\Conferences.Utils\bin\Debug\Conferences.Utils.pdb
 C:\@Projects\ConferenceApp1\Conferences.Utils\obj\Debug\Conferences.Utils.pdb
+C:\Users\Daniel\Documents\GitHub\ConferenceApp1\Conferences.Utils\bin\Debug\Conferences.Utils.dll
+C:\Users\Daniel\Documents\GitHub\ConferenceApp1\Conferences.Utils\bin\Debug\Conferences.Utils.pdb
+C:\Users\Daniel\Documents\GitHub\ConferenceApp1\Conferences.Utils\obj\Debug\Conferences.Utils.csprojResolveAssemblyReference.cache
+C:\Users\Daniel\Documents\GitHub\ConferenceApp1\Conferences.Utils\obj\Debug\Conferences.Utils.dll
+C:\Users\Daniel\Documents\GitHub\ConferenceApp1\Conferences.Utils\obj\Debug\Conferences.Utils.pdb

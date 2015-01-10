@@ -36,7 +36,7 @@ namespace TestConsole
             usr.SpeakerBio = "bla bla bla i like code....";
             persistenceManager.Save(usr);
 
-            var session1 = new Session("room name", "desc", "desc", DateTime.Now, DateTime.Now.AddDays(1));
+            var session1 = persistenceManager.Get<Session>(1);
             session1.Attend(usr);
             persistenceManager.Save(session1);
 

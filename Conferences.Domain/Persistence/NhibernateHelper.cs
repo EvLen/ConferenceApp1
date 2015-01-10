@@ -50,13 +50,13 @@ namespace Conferences.Domain.Persistence
             config.SetProperty("hbm2ddl.keywords", "none");
 
                 // delete the existing db on each run
-            if (File.Exists(DbFile))
-                File.Delete(DbFile);
+            //if (File.Exists(DbFile))
+            //    File.Delete(DbFile);
 
-                // this NHibernate tool takes a configuration (with mapping info in)
-                // and exports a database schema from it
-            new SchemaExport(config)
-                .Create(false, true);
+            //    // this NHibernate tool takes a configuration (with mapping info in)
+            //    // and exports a database schema from it
+            //new SchemaExport(config)
+            //    .Create(false, true);
         }
     }
 }
