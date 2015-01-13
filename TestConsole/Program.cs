@@ -36,11 +36,11 @@ namespace TestConsole
             usr.SpeakerBio = "bla bla bla i like code....";
             persistenceManager.Save(usr);
 
-            var session1 = persistenceManager.Get<Session>(1);
-            session1.Attend(usr);
-            persistenceManager.Save(session1);
+            //var session1 = persistenceManager.Get<Session>(1);
+            //session1.Attend(usr);
+            //persistenceManager.Save(session1);
 
-            Console.WriteLine("Session 1 has " + session1.Attendies.Count + " users atending");
+           // Console.WriteLine("Session 1 has " + session1.Attendies.Count + " users atending");
 
 
             Console.ReadLine();

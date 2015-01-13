@@ -53,8 +53,8 @@ namespace Conferences.Domain.Persistence
             //if (File.Exists(DbFile))
             //    File.Delete(DbFile);
 
-            //    // this NHibernate tool takes a configuration (with mapping info in)
-            //    // and exports a database schema from it
+            ////    // this NHibernate tool takes a configuration (with mapping info in)
+            ////    // and exports a database schema from it
             //new SchemaExport(config)
             //    .Create(false, true);
         }

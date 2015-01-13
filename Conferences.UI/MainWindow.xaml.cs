@@ -24,6 +24,8 @@ namespace Conferences.UI
         public MainWindow()
         {
             InitializeComponent();
+            DBHelper.Init();
+            DBHelper.DB.BeginTransaction();
         }
     }
 }

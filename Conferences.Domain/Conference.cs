@@ -34,6 +34,13 @@ namespace Conferences.Domain
             Price = price;
         }
 
+        public virtual void UpdateBasicInfo(string name, DateTime startDate, DateTime endDate) 
+        {
+            Name = name;
+            StartDate = startDate;
+            EndDate = endDate;
+        }
+
         public virtual void SetPice(decimal price)
         {
             if (price < 0m) throw new Exception("Failed to set price. Price cannot be a negative value");
