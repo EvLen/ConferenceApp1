@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using Conferences.Domain;
+using Conferences.UI.Pages.Controls;
 using FirstFloor.ModernUI.Presentation;
 
 namespace Conferences.UI.Pages
@@ -26,6 +27,10 @@ namespace Conferences.UI.Pages
         {
             InitializeComponent();
             RefreshConferences();
+            MessagingCenter.Subscribe<EditConference>(this, "ReloadConferences", (sender) =>
+            {
+                RefreshConferences();
+            });
         }
 
        

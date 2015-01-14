@@ -91,6 +91,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
+    <Compile Include="ApplicationHelper.cs" />
     <Compile Include="ContentLoader.cs" />
     <Compile Include="DB.cs" />
     <Compile Include="MainWindow.xaml.cs">
@@ -109,6 +110,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Compile Include="MessagingCenter.cs" />
     <Compile Include="Pages\Conferences.xaml.cs">
       <DependentUpon>Conferences.xaml</DependentUpon>
     </Compile>

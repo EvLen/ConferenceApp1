@@ -25,6 +25,7 @@ namespace Conferences.UI.Pages.Controls
             else Model.UpdateBasicInfo(TextConferenceName.Text, DateConferenceStartDate.SelectedDate.Value, DateConferenceEndDate.SelectedDate.Value);
             DBHelper.DB.Save(Model);
             ModernDialog.ShowMessage("Conference Save", "Message", MessageBoxButton.OK);
+            MessagingCenter.Send<EditConference>(this, "ReloadConferences");
         }
 
         public void BindPage()
