@@ -35,7 +35,7 @@
         <Button Name="btnSaveConference" Click="BtnSaveConference_OnClick"  Content="Save" Margin="100,16,0,0" HorizontalAlignment="Left" />
 
 
-        <Grid HorizontalAlignment="Left" Name="EditPanel" >
+        <Grid HorizontalAlignment="Left" Name="EditPanel" Margin="0" >
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200" />
             <ColumnDefinition Width="200" />
@@ -57,8 +57,9 @@
                     <ListView Name="Rooms" MouseDoubleClick="Rooms_MouseDoubleClick" ></ListView>
                 </StackPanel>
             </ScrollViewer>
-            <Button  Grid.Row="1" Grid.Column="0" Name="btnCreateDay" Width="100" Content="Add Day" Click="BtnCreateDay_OnClick" HorizontalAlignment="Left" Margin="0,0,20,0"></Button>
+            <Button  Grid.Row="1" Grid.Column="0" Name="btnCreateDay" Width="100" Content="Add Day"  Click="BtnCreateDay_OnClick" HorizontalAlignment="Left" Margin="0,0,20,0"></Button>
             <Button  Grid.Row="1" Grid.Column="1" Name="btnCreateRoom" Width="100" Content="Add Room" Click="BtnCreateRoom_OnClick" HorizontalAlignment="Left"></Button>
+            <!--Grid.RowSpan="2"-->
         </Grid>
 
 

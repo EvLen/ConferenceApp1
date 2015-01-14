@@ -24,14 +24,9 @@ namespace Conferences.UI.Pages
         public AddUser()
         {
             InitializeComponent();
-
-            Init();
         }
 
-        private void Init()
-        {
-            DBHelper.DB.BeginTransaction();
-        }
+
 
         public void RefreshUsers()
         {

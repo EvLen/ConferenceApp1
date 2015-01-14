@@ -34,7 +34,7 @@ namespace Conferences.UI.Pages.Controls
         {
             Model.AddRoom(TextRoomName.Text, TextCapacity.ConvertToInt32(0));
             DBHelper.DB.Save(Model);
-            MessagingCenter.Send<object>(this, Messages.ConferenceEditied);
+            MessagingCenter.Send<object>(this, Messages.ConferenceEdited);
         }
     }
 }

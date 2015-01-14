@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using Conferences.Domain;
@@ -19,7 +20,7 @@ namespace Conferences.UI.Pages.Controls
         {
             InitializeComponent();
             Reload(id);
-            MessagingCenter.Subscribe<object>(this, Messages.ConferenceEditied, (sender) =>
+            MessagingCenter.Subscribe<object>(this, Messages.ConferenceEdited, (sender) =>
             {
                 if(LastPopup != null) LastPopup.Close();
                 Reload();
@@ -29,12 +30,14 @@ namespace Conferences.UI.Pages.Controls
 
         private void BtnSaveConference_OnClick(object sender, RoutedEventArgs e)
         {
-            if (Model.Id == 0) Model = new Conference(TextConferenceName.Text, DateConferenceStartDate.SelectedDate.Value, DateConferenceEndDate.SelectedDate.Value);
+            var isNew = Model.Id == 0;
+            if (isNew) Model = new Conference(TextConferenceName.Text, DateConferenceStartDate.SelectedDate.Value, DateConferenceEndDate.SelectedDate.Value);
             else Model.UpdateBasicInfo(TextConferenceName.Text, DateConferenceStartDate.SelectedDate.Value, DateConferenceEndDate.SelectedDate.Value);
             DBHelper.DB.Save(Model);
-            ModernDialog.ShowMessage("Conference Save", "Message", MessageBoxButton.OK);
+            var result = ModernDialog.ShowMessage("Conference Save", "Message", MessageBoxButton.OK);
             MessagingCenter.Send<object>(this, Messages.ConferencesUpdated);
-           
+            if(isNew) Model = new Conference();
+            BindPage();
         }
 
         public void Reload(int id = -1)
@@ -79,14 +82,18 @@ namespace Conferences.UI.Pages.Controls
 
         private void BtnCreateDay_OnClick(object sender, RoutedEventArgs e)
         {
+            
             var bbBlock = new BBCodeBlock();
-            bbBlock.LinkNavigator.Navigate(new Uri("/Pages/Home.xaml", UriKind.Relative), this, NavigationHelper.FrameParent);
+            bbBlock.LinkNavigator.Navigate(new Uri("/Users?", UriKind.Relative), this, NavigationHelper.FrameParent);
         }
 
         private void Rooms_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
+            var room = Model.Rooms.SingleOrDefault(x => x.Name == Rooms.SelectedItem.ToString());
             var bbBlock = new BBCodeBlock();
-            bbBlock.LinkNavigator.Navigate(new Uri("/Pages/Home.xaml", UriKind.Relative), this, NavigationHelper.FrameSelf);
+            bbBlock.LinkNavigator.Navigate(new Uri("/rooms?" + room.Id, UriKind.Relative), this, NavigationHelper.FrameSelf);
         }
+
+      
     }
 }

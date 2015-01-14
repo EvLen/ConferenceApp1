@@ -9,7 +9,7 @@ namespace Conferences.UI
     public static class Messages
     {
         public const string ConferencesUpdated = "ConferencesUpdated";
-        public const string ConferenceEditied = "ConferenceEditied";
+        public const string ConferenceEdited = "ConferenceEditied";
     }
     public static class MessagingCenter
     {

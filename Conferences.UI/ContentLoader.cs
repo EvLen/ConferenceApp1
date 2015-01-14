@@ -19,8 +19,15 @@ namespace Conferences.UI
         /// <returns>The loaded content.</returns>
         protected override object LoadContent(Uri uri)
         {
-            if (uri.ToString().Contains("Home")) return new Home();
+            var url = uri.ToString().ToLower();
+            if (url.Contains("home")) return new Home();
+            if (url.Contains("rooms"))
+                return new EditConference(url.Replace("/rooms?","").ConvertToInt32(0));//this should be ur room control
+            if (url.Contains("users"))
+                return new EditConference(url.Replace("/users?", "").ConvertToInt32(0));//this should be ur user control
+
             return new EditConference(uri.ToString().Replace("/","").ConvertToInt32(0));
+            
         }
     }
 }
