@@ -98,6 +98,10 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="Pages\Controls\AddUser.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Conferences.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -115,6 +119,9 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Compile Include="MessagingCenter.cs" />
+    <Compile Include="Pages\Controls\AddUser.xaml.cs">
+      <DependentUpon>AddUser.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Conferences.xaml.cs">
       <DependentUpon>Conferences.xaml</DependentUpon>
     </Compile>
