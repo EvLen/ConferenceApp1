@@ -102,6 +102,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Controls\CreateRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Controls\EditConference.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -113,6 +117,9 @@
     <Compile Include="MessagingCenter.cs" />
     <Compile Include="Pages\Conferences.xaml.cs">
       <DependentUpon>Conferences.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\CreateRoom.xaml.cs">
+      <DependentUpon>CreateRoom.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Controls\EditConference.xaml.cs">
       <DependentUpon>EditConference.xaml</DependentUpon>

@@ -1,0 +1,20 @@
+﻿<UserControl x:Class="Conferences.UI.Pages.Controls.CreateRoom"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="300">
+    <StackPanel>
+        <StackPanel>
+            <Label Content="Name" Target="{Binding ElementName=TextRoomName}"/>
+            <TextBox x:Name="TextRoomName" Width="150" Text="" />
+        </StackPanel>
+        <StackPanel>
+            <Label Content="Capacity" Target="{Binding ElementName=TextCapacity}" />
+            <TextBox x:Name="TextCapacity" Width="150" Text="100" />
+        </StackPanel>
+        <Button Name="btnSave" Click="BtnSave_OnClick"  Content="Save" Margin="100,16,0,0" HorizontalAlignment="Center" />
+
+    </StackPanel>
+</UserControl>
