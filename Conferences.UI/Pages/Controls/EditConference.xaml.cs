@@ -3,6 +3,7 @@ using System.Windows.Controls;
 using Conferences.Domain;
 using FirstFloor.ModernUI.Windows.Controls;
 
+
 namespace Conferences.UI.Pages.Controls
 {
     /// <summary>
