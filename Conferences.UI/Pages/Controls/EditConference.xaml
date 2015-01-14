@@ -5,10 +5,8 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mui="http://firstfloorsoftware.com/ModernUI"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="300">
+             d:DesignHeight="300" d:DesignWidth="500">
     <StackPanel x:Name="Form" Orientation="Vertical">
-        
-
         <StackPanel.Resources>
             <Style TargetType="StackPanel">
                 <Setter Property="Orientation" Value="Horizontal" />
@@ -36,10 +34,33 @@
        
         <Button Name="btnSaveConference" Click="BtnSaveConference_OnClick"  Content="Save" Margin="100,16,0,0" HorizontalAlignment="Left" />
 
-    <StackPanel Name="EditPanel" Orientation="Vertical">
-        <TextBlock Text="Rooms" Style="{StaticResource Title}" Margin="0,0,0,8"/>
-        <ListView Name="Rooms" ></ListView>
-        <Button Name="btnCreateRoom" Width="100" Content="Add Room" Click="BtnCreateRoom_OnClick" HorizontalAlignment="Left"></Button>
-    </StackPanel>
+
+        <Grid HorizontalAlignment="Left" Name="EditPanel" >
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="200" />
+            <ColumnDefinition Width="200" />
+        </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300" />
+                <RowDefinition  Height="30"/>
+            </Grid.RowDefinitions>
+
+            <ScrollViewer Grid.Row="0" Grid.Column="0" Margin="0,0,20,4">
+            <StackPanel   Orientation="Vertical"  >
+                <TextBlock Text="Days" Style="{StaticResource Title}" Margin="0,0,0,8"/>
+                    <ListView Name="Days" ></ListView>
+                </StackPanel>
+            </ScrollViewer>
+            <ScrollViewer Grid.Row="0" Grid.Column="1">
+                <StackPanel Orientation="Vertical">
+                <TextBlock Text="Rooms" Style="{StaticResource Title}" Margin="0,0,0,8"/>
+                    <ListView Name="Rooms" MouseDoubleClick="Rooms_MouseDoubleClick" ></ListView>
+                </StackPanel>
+            </ScrollViewer>
+            <Button  Grid.Row="1" Grid.Column="0" Name="btnCreateDay" Width="100" Content="Add Day" Click="BtnCreateDay_OnClick" HorizontalAlignment="Left" Margin="0,0,20,0"></Button>
+            <Button  Grid.Row="1" Grid.Column="1" Name="btnCreateRoom" Width="100" Content="Add Room" Click="BtnCreateRoom_OnClick" HorizontalAlignment="Left"></Button>
+        </Grid>
+
+
     </StackPanel>
 </UserControl>

@@ -1,7 +1,9 @@
-﻿using System.Windows;
+﻿using System;
+using System.Windows;
 using System.Windows.Controls;
 using Conferences.Domain;
 using FirstFloor.ModernUI.Windows.Controls;
+using FirstFloor.ModernUI.Windows.Navigation;
 
 
 namespace Conferences.UI.Pages.Controls
@@ -73,6 +75,18 @@ namespace Conferences.UI.Pages.Controls
             };
             wnd.Show();
             LastPopup = wnd;
+        }
+
+        private void BtnCreateDay_OnClick(object sender, RoutedEventArgs e)
+        {
+            var bbBlock = new BBCodeBlock();
+            bbBlock.LinkNavigator.Navigate(new Uri("/Pages/Home.xaml", UriKind.Relative), this, NavigationHelper.FrameParent);
+        }
+
+        private void Rooms_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            var bbBlock = new BBCodeBlock();
+            bbBlock.LinkNavigator.Navigate(new Uri("/Pages/Home.xaml", UriKind.Relative), this, NavigationHelper.FrameSelf);
         }
     }
 }

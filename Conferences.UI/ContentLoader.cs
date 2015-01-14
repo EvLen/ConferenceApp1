@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Conferences.UI.Pages;
 using Conferences.UI.Pages.Controls;
 using FirstFloor.ModernUI.Windows;
 
@@ -18,6 +19,7 @@ namespace Conferences.UI
         /// <returns>The loaded content.</returns>
         protected override object LoadContent(Uri uri)
         {
+            if (uri.ToString().Contains("Home")) return new Home();
             return new EditConference(uri.ToString().Replace("/","").ConvertToInt32(0));
         }
     }

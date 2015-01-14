@@ -9,44 +9,10 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBlock Text="Conferences"></TextBlock>
-                <ListView Name="lstConferences"></ListView>
+                <TextBlock Text="Home"></TextBlock>
+               
             
 
-            <TextBlock Text="SAMPLE FORM" Style="{StaticResource Heading2}" Margin="0,0,0,8" />
-            <mui:BBCodeBlock BBCode="A sample form demonstrating various controls with support for validation and focus visualization." Margin="0,0,0,16"/>
-
-            <!-- actual form starts here -->
-            <StackPanel x:Name="Form" Orientation="Vertical">
-
-               
-                <StackPanel.Resources>
-                    <Style TargetType="StackPanel">
-                        <Setter Property="Orientation" Value="Horizontal" />
-                        <Setter Property="Margin" Value="0,0,0,4" />
-                    </Style>
-                    <Style TargetType="Label" BasedOn="{StaticResource {x:Type Label}}">
-                        <Setter Property="Width" Value="100" />
-                        <Setter Property="VerticalAlignment" Value="Center" />
-                    </Style>
-                   
-                </StackPanel.Resources>
-
-                    <StackPanel>
-                        <Label Content="Name" Target="{Binding ElementName=TextConferenceName}"/>
-                        <TextBox x:Name="TextConferenceName" Width="150" Text="" />
-                    </StackPanel>
-                    <StackPanel>
-                        <Label Content="Start Date" Target="{Binding ElementName=DateConferenceStartDate}" />
-                    <DatePicker x:Name="DateConferenceStartDate" />
-                </StackPanel>
-                    <StackPanel>
-                        <Label Content="End Date" Target="{Binding ElementName=DateConferenceEndDate}" />
-                        <DatePicker x:Name="DateConferenceEndDate" />
-                    </StackPanel>
-
-                <Button Name="btnCreateConference" Click="BtnCreateConference_OnClick"  Content="Submit" Margin="100,16,0,0" HorizontalAlignment="Left" />
-            </StackPanel>
 
             </StackPanel>
         </ScrollViewer>

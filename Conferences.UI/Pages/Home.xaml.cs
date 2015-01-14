@@ -28,29 +28,8 @@ namespace Conferences.UI.Pages
         {
             InitializeComponent();
            
-            Init();
         }
 
-        public void Init()
-        {
-            DBHelper.DB.BeginTransaction();
-        }
-
-        public void RefreshConferences()
-        {
-            var conferences = DBHelper.DB.Session.CreateCriteria(typeof(Conference)).List<Conference>();
-            lstConferences.Items.Clear();
-            foreach (var c in conferences)
-            {
-                lstConferences.Items.Add(c.Name);
-            }
-        }
-
-        private void BtnCreateConference_OnClick(object sender, RoutedEventArgs e)
-        {
-            var conference  = new Conference(TextConferenceName.Text,DateConferenceStartDate.DisplayDate, DateConferenceEndDate.DisplayDate);
-            DBHelper.DB.Save(conference);
-            RefreshConferences();
-        }
+        
     }
 }
