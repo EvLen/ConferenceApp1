@@ -6,8 +6,14 @@ using System.Threading.Tasks;
 
 namespace Conferences.UI
 {
+    public static class Messages
+    {
+        public const string ConferenceEditied = "ConferenceEditied";
+    }
     public static class MessagingCenter
     {
+        
+
         private static Dictionary<Tuple<string, Type, Type>, List<Tuple<WeakReference, Action<object, object>>>> callbacks = new Dictionary<Tuple<string, Type, Type>, List<Tuple<WeakReference, Action<object, object>>>>();
 
         public static void Subscribe<TSender, TArgs>(object subscriber, string message, Action<TSender, TArgs> callback, TSender source = null) where TSender : class

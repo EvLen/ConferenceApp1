@@ -27,7 +27,7 @@ namespace Conferences.UI.Pages
         {
             InitializeComponent();
             RefreshConferences();
-            MessagingCenter.Subscribe<EditConference>(this, "ReloadConferences", (sender) =>
+            MessagingCenter.Subscribe<object>(this, Messages.ConferenceEditied, (sender) =>
             {
                 RefreshConferences();
             });
