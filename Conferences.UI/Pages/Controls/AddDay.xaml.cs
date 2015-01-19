@@ -29,11 +29,14 @@ namespace Conferences.UI.Pages.Controls
             DataContext = Model;
         }
 
-        private void BtnSave_OnClick(object sender, RoutedEventArgs e)
-        {
-            Model.AddDay(DateOfDay.SelectedDate.Value);
-            DBHelper.DB.Save(Model);
-            MessagingCenter.Send<object>(this, Messages.ConferencesUpdated);
-        }
+
+        //private void BtnSave_OnClick(object sender, RoutedEventArgs e)
+        //{
+        //    Model.AddDay(DateOfDay.SelectedDate.Value);
+        //    DBHelper.DB.Save(Model);
+        //    MessagingCenter.Send<object>(this, Messages.ConferencesUpdated);
+        //}
+
+
     }
 }

@@ -11,9 +11,8 @@
             <StackPanel MinWidth="200">
                 <TextBlock Text="Add Day" Style="{StaticResource Heading2}" />
                 <TextBlock Text="Please Select Date for Day of Conference." />
-                <Label Content="Date" Target="{Binding ElementName=DateOfDay}" />
-                <DatePicker x:Name="DateOfDay" />
-                <Button Name="btnSave" Click="BtnSave_OnClick"  Content="Save" Margin="100,16,0,0" HorizontalAlignment="Center" />
+                <ListView Name="Days" Height="150"  ></ListView>
+                <!--<Button Name="btnSave" Click="BtnSave_OnClick"  Content="Save" Margin="100,16,0,0" HorizontalAlignment="Center" />-->
             </StackPanel>
         </ScrollViewer>
     </Grid>

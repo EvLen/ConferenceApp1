@@ -97,6 +97,7 @@ namespace Conferences.UI.Pages.Controls
             LastPopup = wnd;
         }
 
+     
         private void Rooms_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
             var room = Model.Rooms.SingleOrDefault(x => x.Name == Rooms.SelectedItem.ToString());
