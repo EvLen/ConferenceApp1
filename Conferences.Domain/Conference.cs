@@ -18,6 +18,7 @@ namespace Conferences.Domain
         public Conference()
         {
             Days = new List<Day>();
+            Rooms = new List<Room>();
             StartDate = DateTime.Now;
             EndDate = DateTime.Now;
             Name = string.Empty;

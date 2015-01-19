@@ -82,9 +82,19 @@ namespace Conferences.UI.Pages.Controls
 
         private void BtnCreateDay_OnClick(object sender, RoutedEventArgs e)
         {
-            
-            var bbBlock = new BBCodeBlock();
-            bbBlock.LinkNavigator.Navigate(new Uri("/Users?", UriKind.Relative), this, NavigationHelper.FrameParent);
+
+            var wnd = new ModernWindow
+            {
+                Style = (Style)App.Current.Resources["BlankWindow"],
+                Title = "Add Day",
+                IsTitleVisible = true,
+                Content = new AddDay(Model),
+                Width = 175,
+                Height = 100,
+                ResizeMode = ResizeMode.NoResize
+            };
+            wnd.Show();
+            LastPopup = wnd;
         }
 
         private void Rooms_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
