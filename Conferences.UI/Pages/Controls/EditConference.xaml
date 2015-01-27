@@ -48,7 +48,7 @@
             <ScrollViewer Grid.Row="0" Grid.Column="0" Margin="0,0,20,4">
             <StackPanel   Orientation="Vertical"  >
                 <TextBlock Text="Days" Style="{StaticResource Title}" Margin="0,0,0,8"/>
-                    <ListView Name="Days" ></ListView>
+                    <ListView Name="Days" MouseDoubleClick="Days_MouseDoubleClick"  ></ListView>
                 </StackPanel>
             </ScrollViewer>
             <ScrollViewer Grid.Row="0" Grid.Column="1">

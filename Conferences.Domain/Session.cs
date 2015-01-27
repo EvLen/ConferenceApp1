@@ -76,5 +76,7 @@ namespace Conferences.Domain
             EndTime = endTime;
         }
 
+     
+
     }
 }

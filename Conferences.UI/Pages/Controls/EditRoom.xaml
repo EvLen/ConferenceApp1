@@ -1,4 +1,4 @@
-﻿<UserControl x:Class="Conferences.UI.Pages.Controls.AddDay"
+﻿<UserControl x:Class="Conferences.UI.Pages.Controls.EditRoom"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
@@ -9,10 +9,8 @@
     <Grid Style="{StaticResource ContentRoot}">
         <ScrollViewer>
             <StackPanel MinWidth="200">
-                <TextBlock Text="Add Day" Style="{StaticResource Heading2}" />
-                <TextBlock Text="Please Select Date for Day of Conference." />
-                <ListView Name="Days" Height="150"  ></ListView>
-                <Button Name="btnSave" Click="BtnSave_OnClick"  Content="Save" Margin="100,16,0,0" HorizontalAlignment="Center" />
+                <TextBlock Name="Heading" Text="BASIC PAGE" Style="{StaticResource Heading2}" />
+                <TextBlock Text="Content goes here" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

@@ -61,5 +61,22 @@ namespace Conferences.Domain
             if (Rooms.Any(x => x.Name == name)) throw new Exception("ddd");
             Rooms.Add(new Room(this,name,capcity));
         }
+
+           public virtual List<DateTime> GetAvailableDates()
+        {
+            var dates = new List<DateTime>();
+            var dt = StartDate;
+               do
+               {
+                   dates.Add(dt);
+                   dt = dt.AddDays(1);
+               }while(dt < EndDate);
+               return dates;
+        }
+
+           public virtual bool HasDay(DateTime date)
+           {
+               return Days.Any(x => x.Date.ToStartOfDay() == date.ToStartOfDay());
+           }
     }
 }

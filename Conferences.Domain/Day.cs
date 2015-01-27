@@ -9,8 +9,9 @@ namespace Conferences.Domain
     public class Day : Entity
     {
         public virtual DateTime Date { get; set; }
-        public virtual List<Session> Sessions { get; set; }
+        public virtual IList<Session> Sessions { get; set; }
         public virtual Conference Conference { get; set; }
+        public virtual string Name { get { return Date.ToString("ddd dd MMM yyyy"); } }
         
         public Day()
         {

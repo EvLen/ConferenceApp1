@@ -118,6 +118,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Pages\Controls\EditRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Pages\Settings\About.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -137,6 +141,9 @@
     </Compile>
     <Compile Include="Pages\Controls\EditConference.xaml.cs">
       <DependentUpon>EditConference.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\Controls\EditRoom.xaml.cs">
+      <DependentUpon>EditRoom.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\Settings\About.xaml.cs">
       <DependentUpon>About.xaml</DependentUpon>

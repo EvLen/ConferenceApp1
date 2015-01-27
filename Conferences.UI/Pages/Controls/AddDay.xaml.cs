@@ -27,15 +27,18 @@ namespace Conferences.UI.Pages.Controls
             InitializeComponent();
             Model = model;
             DataContext = Model;
+            //foreach (var d in Model.GetAvailableDates().Where(x => !Model.HasDay(x)))
+            //        Days.Items.Add(d.ToString());
+            Days.ItemsSource = Model.GetAvailableDates().Where(x => !Model.HasDay(x)).Select(d => d.ToString("dd/MM/yyyy"));
         }
 
 
-        //private void BtnSave_OnClick(object sender, RoutedEventArgs e)
-        //{
-        //    Model.AddDay(DateOfDay.SelectedDate.Value);
-        //    DBHelper.DB.Save(Model);
-        //    MessagingCenter.Send<object>(this, Messages.ConferencesUpdated);
-        //}
+        private void BtnSave_OnClick(object sender, RoutedEventArgs e)
+        {
+            Model.AddDay(Days.SelectedItem.ConvertToDateTime(DateTime.Now));
+            DBHelper.DB.Save(Model);
+            MessagingCenter.Send<object>(this, Messages.ConferenceEdited);
+        }
 
 
     }

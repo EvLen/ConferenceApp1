@@ -37,12 +37,20 @@ namespace Conferences.UI.Pages
 
         public void RefreshConferences()
         {
-            var conferences = DBHelper.DB.Session.CreateCriteria(typeof(Conference)).List<Conference>();
-            ConferencesList.Links.Clear();
-            foreach (var c in conferences)
-                ConferencesList.Links.Add(new Link() { DisplayName = c.Name, Source = new Uri("/" + c.Id, UriKind.Relative) });
+            try
+            {
+                var conferences = DBHelper.DB.Session.CreateCriteria(typeof(Conference)).List<Conference>();
+                ConferencesList.Links.Clear();
+                foreach (var c in conferences)
+                    ConferencesList.Links.Add(new Link() { DisplayName = c.Name, Source = new Uri("/" + c.Id, UriKind.Relative) });
 
-            ConferencesList.Links.Add(new Link() { DisplayName = "Create New", Source = new Uri("/0", UriKind.Relative) });
+                ConferencesList.Links.Add(new Link() { DisplayName = "Create New", Source = new Uri("/0", UriKind.Relative) });
+            }
+            catch (Exception ex)
+            {
+
+            }
+            
         }
     }
 }

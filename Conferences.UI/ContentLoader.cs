@@ -22,7 +22,7 @@ namespace Conferences.UI
             var url = uri.ToString().ToLower();
             if (url.Contains("home")) return new Home();
             if (url.Contains("rooms"))
-                return new EditConference(url.Replace("/rooms?","").ConvertToInt32(0));//this should be ur room control
+                return new EditRoom(url.Replace("/rooms?","").ConvertToInt32(0));//this should be ur room control
             if (url.Contains("users"))
                 return new EditConference(url.Replace("/users?", "").ConvertToInt32(0));//this should be ur user control
 

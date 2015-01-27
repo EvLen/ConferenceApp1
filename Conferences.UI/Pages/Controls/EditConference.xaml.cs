@@ -59,7 +59,11 @@ namespace Conferences.UI.Pages.Controls
                 Rooms.Items.Clear();
                 foreach (var room in Model.Rooms)
                     Rooms.Items.Add(room.Name);
+                Days.Items.Clear();
+                foreach (var day in Model.Days)
+                    Days.Items.Add(day.Name);
             }
+
             else EditPanel.Visibility = Visibility.Hidden;
         }
 
@@ -103,6 +107,13 @@ namespace Conferences.UI.Pages.Controls
             var room = Model.Rooms.SingleOrDefault(x => x.Name == Rooms.SelectedItem.ToString());
             var bbBlock = new BBCodeBlock();
             bbBlock.LinkNavigator.Navigate(new Uri("/rooms?" + room.Id, UriKind.Relative), this, NavigationHelper.FrameSelf);
+        }
+
+        private void Days_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
+        {
+            //var room = Model.Rooms.SingleOrDefault(x => x.Name == Days.SelectedItem.ToString());
+            //var bbBlock = new BBCodeBlock();
+            //bbBlock.LinkNavigator.Navigate(new Uri("/days?" + room.Id, UriKind.Relative), this, NavigationHelper.FrameSelf);
         }
 
       
