@@ -27,7 +27,9 @@ namespace Conferences.UI
                 return new EditConference(url.Replace("/users?", "").ConvertToInt32(0));//this should be ur user control
 
             return new EditConference(uri.ToString().Replace("/","").ConvertToInt32(0));
-            
+
+            if (url.Contains("days"))
+                return new EditDay(url.Replace("/days?", "").ConvertToInt32(0));
         }
     }
 }

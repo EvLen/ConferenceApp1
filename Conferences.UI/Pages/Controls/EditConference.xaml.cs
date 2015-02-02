@@ -111,9 +111,9 @@ namespace Conferences.UI.Pages.Controls
 
         private void Days_MouseDoubleClick(object sender, System.Windows.Input.MouseButtonEventArgs e)
         {
-            //var room = Model.Rooms.SingleOrDefault(x => x.Name == Days.SelectedItem.ToString());
-            //var bbBlock = new BBCodeBlock();
-            //bbBlock.LinkNavigator.Navigate(new Uri("/days?" + room.Id, UriKind.Relative), this, NavigationHelper.FrameSelf);
+            var day = Model.Days.SingleOrDefault(x => x.Name == Days.SelectedItem.ToString());
+            var bbBlock = new BBCodeBlock();
+            bbBlock.LinkNavigator.Navigate(new Uri("/days?" + day.Id, UriKind.Relative), this, NavigationHelper.FrameSelf);
         }
 
       
