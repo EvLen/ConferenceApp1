@@ -21,11 +21,14 @@ namespace Conferences.UI.Pages.Controls
     /// </summary>
     public partial class EditRoom : UserControl
     {
+        public Conference Model { get; set; }
         public EditRoom(int roomId)
         {
             InitializeComponent();
             var room = DBHelper.DB.Get<Room>(roomId);
             Heading.Text = room.Name;
+            //ConferenceNameHeader.Text = room.Conference;
+            //TextCapacity.Text = room.Capacity;
         }
     }
 }

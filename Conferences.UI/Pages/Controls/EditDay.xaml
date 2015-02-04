@@ -10,7 +10,7 @@
         <ScrollViewer>
             <StackPanel MinWidth="200">
                 <TextBlock Name="Heading" Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <TextBlock Text="Content goes here" />
+                <TextBlock Name ="ConferenceNameHeader" Text="Content goes here" />
             </StackPanel>
         </ScrollViewer>
     </Grid>

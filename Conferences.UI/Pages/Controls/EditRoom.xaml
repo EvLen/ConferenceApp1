@@ -10,7 +10,27 @@
         <ScrollViewer>
             <StackPanel MinWidth="200">
                 <TextBlock Name="Heading" Text="BASIC PAGE" Style="{StaticResource Heading2}" />
-                <TextBlock Text="Content goes here" />
+                <TextBlock Name="ConferenceNameHeader" Text="Conference Name Goes Here" />
+                <StackPanel>
+                    <Label Content="Capacity" Target="{Binding ElementName=TextCapacity}" />
+                    <TextBox x:Name="TextCapacity" Width="150" Text="RoomCapHere" />
+                </StackPanel>
+                <StackPanel>
+                 <TextBlock Name="SessionHeader" Text="Session List" Style="{StaticResource Heading2}" />
+                <ListView Name="Sessions" Height="130"  ></ListView>   
+                </StackPanel>
+                
+                <Grid HorizontalAlignment="Left" Name="ButtonPanel" Margin="0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="140" />
+                        <ColumnDefinition Width="140" />
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="30" />
+                    </Grid.RowDefinitions>
+                    <Button Grid.Row="0" Grid.Column="0" Name="AddSession" Width="100" Content="Add Session" Click="BtnCreateDay_OnClick" HorizontalAlignment="Left" Margin="0,0,0,0"></Button>
+                    
+                </Grid>
             </StackPanel>
         </ScrollViewer>
     </Grid>

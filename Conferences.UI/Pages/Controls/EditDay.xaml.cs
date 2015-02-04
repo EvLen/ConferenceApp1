@@ -21,11 +21,13 @@ namespace Conferences.UI.Pages.Controls
     /// </summary>
     public partial class EditDay : UserControl
     {
+        public Conference Model { get; set; }
         public EditDay(int dayId)
         {
             InitializeComponent();
             var days = DBHelper.DB.Get<Day>(dayId);
-            
+            Heading.Text = days.Name;
+            //ConferenceNameHeader.Text = days.Conference;
         }
     }
 }
