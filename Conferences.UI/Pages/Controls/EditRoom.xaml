@@ -16,7 +16,7 @@
                     <TextBox x:Name="TextCapacity" Width="150" Text="RoomCapHere" />
                 </StackPanel>
                 <StackPanel>
-                 <TextBlock Name="SessionHeader" Text="Session List" Style="{StaticResource Heading2}" />
+                 <TextBlock Name="SessionHeader" Text="Session List" Style="{StaticResource Heading2}" /> 
                 <ListView Name="Sessions" Height="130"  ></ListView>   
                 </StackPanel>
                 
@@ -28,8 +28,8 @@
                     <Grid.RowDefinitions>
                         <RowDefinition Height="30" />
                     </Grid.RowDefinitions>
-                    <Button Grid.Row="0" Grid.Column="0" Name="AddSession" Width="100" Content="Add Session" Click="BtnCreateDay_OnClick" HorizontalAlignment="Left" Margin="0,0,0,0"></Button>
-                    
+                    <Button Grid.Row="0" Grid.Column="0" Name="AddSession" Width="100" Content="Add Session" Click="BtnCreateSession_OnClick" HorizontalAlignment="Left" Margin="0,0,0,0"></Button>
+                    <Button Grid.Row="0" Grid.Column="1" Name="RemoveDay" Width="100" Content="Remove Day" Click="BtnRemoveRoom_OnClick" HorizontalAlignment="Left" Margin="0,0,0,0"></Button>
                 </Grid>
             </StackPanel>
         </ScrollViewer>

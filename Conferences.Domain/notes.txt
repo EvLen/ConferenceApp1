@@ -1,0 +1,6 @@
+﻿On Edit room show a list of session already assigned to that day# 
+Add Session on the EditDay
+add list to EditDay and show list of essions with more details
+assign session on room button on editroom
+Add user search
+add grip view for users

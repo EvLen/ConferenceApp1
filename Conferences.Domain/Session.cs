@@ -28,8 +28,9 @@ namespace Conferences.Domain
             Attendies = new List<User>();
         }
 
-        public Session(string name, string summery, string desc, DateTime startTime, DateTime endTime, Room room = null, User speaker1 = null):this()
+        public Session(Day day, string name, string summery, string desc, DateTime startTime, DateTime endTime, Room room = null, User speaker1 = null):this()
         {
+            Day = day;
             Name = name;
             Summery = summery;
             Desc = desc;
@@ -60,6 +61,11 @@ namespace Conferences.Domain
          if (room.Sessions.Any(x => (x.StartTime <= EndTime && StartTime <= x.EndTime))) throw new Exception("over lap");
          Room = room;
         }
+        public virtual void UnAssignRoom()
+        {
+            Room = null;
+        }
+
 
         public virtual void SetSpeaker(User speaker)
         {

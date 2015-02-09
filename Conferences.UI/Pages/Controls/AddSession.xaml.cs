@@ -18,24 +18,18 @@ using FirstFloor.ModernUI.Windows.Controls;
 namespace Conferences.UI.Pages.Controls
 {
     /// <summary>
-    /// Interaction logic for CreateRoom.xaml
+    /// Interaction logic for AddSession.xaml
     /// </summary>
-    public partial class CreateRoom : UserControl
+    public partial class AddSession : UserControl
     {
-        public Conference Model { get; set; }
-        public CreateRoom(Conference model)
+
+        public Room Model { get; set; }
+        public AddSession(Room model)
         {
             InitializeComponent();
             Model = model;
             DataContext = Model;
         }
 
-        private void BtnSave_OnClick(object sender, RoutedEventArgs e)
-        {
-            var room = Model.AddRoom(TextRoomName.Text, TextCapacity.Text.ConvertToInt32(0));
-            DBHelper.DB.Save(room);
-            DBHelper.DB.Save(Model);
-            MessagingCenter.Send<object>(this, Messages.ConferenceEdited);
-        }
     }
 }

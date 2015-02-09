@@ -48,18 +48,35 @@ namespace Conferences.Domain
             Price = price;
         }
 
-        public virtual void AddDay(DateTime date)
+        public virtual Day AddDay(DateTime date)
         {
             date = date.ToStartOfDay();
             if (date < DateTime.Now) throw new Exception("Date Must Not Be In The Past");
             if (Days.SingleOrDefault(x => x.Date == date) != null) throw new Exception("Date Already Exists");
-            Days.Add(new Day(this,date));
+            var day = new Day(this, date);
+            Days.Add(day);
+            return day;
         }
 
-        public virtual void AddRoom(string name, int capcity)
+        public virtual Room AddRoom(string name, int capcity)
         {
             if (Rooms.Any(x => x.Name == name)) throw new Exception("ddd");
-            Rooms.Add(new Room(this,name,capcity));
+            var room = new Room(this, name, capcity);
+            Rooms.Add(room);
+            return room;
+        }
+
+        public virtual void DeleteRoom(Room room)
+        {
+            Rooms.Remove(room);
+            foreach (var d in Days)
+            {
+                foreach (var s in d.Sessions)
+                {
+                    s.UnAssignRoom();
+                }
+            }
+
         }
 
            public virtual List<DateTime> GetAvailableDates()
