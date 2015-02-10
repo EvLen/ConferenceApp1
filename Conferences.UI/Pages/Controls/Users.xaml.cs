@@ -1,18 +1,10 @@
-﻿using Conferences.Domain;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+using Conferences.Domain;
+using NHibernate;
+using NHibernate.Criterion;
 
 namespace Conferences.UI.Pages.Controls
 {
@@ -32,30 +24,35 @@ namespace Conferences.UI.Pages.Controls
             Reload();
         }
 
-        public async void Reload()
+        public void Reload()
         {
-            var usrs = DBHelper.DB.Session.CreateCriteria(typeof(User)).List<User>();
-           // ViewModel.Users = usrs;
+            ICriteria query = DBHelper.DB.Session.CreateCriteria<User>();
+            if(!string.IsNullOrWhiteSpace(txtFirstName.Text))
+                query.Add(Restrictions.Like("FirstName", txtFirstName.Text));
+            if (!string.IsNullOrWhiteSpace(txtSurname.Text))
+                query.Add(Restrictions.Like("Surname", txtSurname.Text));
+            if (!string.IsNullOrWhiteSpace(txtEmail.Text))
+                query.Add(Restrictions.Like("Email", txtEmail.Text));
+            query.Add(Restrictions.Eq("IsSpeaker", chkSpeaker.IsChecked));
+
+            var users = query.List<User>() as List<User>;
             ViewModel.Users.Clear();
-            foreach (var usr in usrs)
+            foreach (var usr in users)
                 ViewModel.Users.Add(usr);
-            grid.ItemsSource = ViewModel.Users;
-           
         }
 
-        private void ModernButton_Click(object sender, RoutedEventArgs e)
+        private void Refresh_OnClick(object sender, RoutedEventArgs e)
         {
             Reload();
-            DataContext = ViewModel;
         }
     }
 
     public class UserListViewModel
     {
-        public IList<User> Users { get; set; }
+        public ObservableCollection<User> Users { get; set; }
         public UserListViewModel()
         {
-            Users = new List<User>();
+            Users = new ObservableCollection<User>();
         }
     }
 }

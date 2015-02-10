@@ -15,8 +15,8 @@
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="Users">
             <mui:LinkGroup.Links>
-                <mui:Link DisplayName="Add User" Source="/Pages/Controls/AddUser.xaml" />
                 <mui:Link DisplayName="Users" Source="/Pages/Controls/Users.xaml" />
+                <mui:Link DisplayName="Add User" Source="/Pages/Controls/AddUser.xaml" />
             </mui:LinkGroup.Links>
         </mui:LinkGroup>
         <mui:LinkGroup DisplayName="settings" GroupKey="settings">
